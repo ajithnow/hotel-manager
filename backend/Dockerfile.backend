@@ -1,0 +1,23 @@
+# Use the official Go image as the base image for the backend
+FROM golang:1.20-alpine
+
+# Set the working directory inside the container
+WORKDIR /app/backend
+
+# Copy the Go module files to the container
+COPY go.mod go.sum ./
+
+# Download the Go module dependencies (if any)
+RUN go mod download
+
+# Copy the backend application code to the container
+COPY / ./
+
+# Build the backend application
+RUN go build -o main .
+
+# Expose port 8080 for the backend
+EXPOSE 8080
+
+# Start the backend application
+CMD ["./main"]
