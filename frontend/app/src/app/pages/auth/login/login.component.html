@@ -1,0 +1,40 @@
+<div class="bx--grid bx--grid--full-width bx--grid--no-gutter">
+  <div class="bx--row">
+    <div class="bx--col-lg-4 bx--col-md-3 bx--col-sm-2"></div>
+    <div class="bx--col-lg-4 bx--col-md-6 bx--col-sm-8">
+      <form class="bx--form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="bx--form-item">
+          <label for="username" class="bx--label">Username</label>
+          <input
+            id="username"
+            type="text"
+            class="bx--text-input"
+            formControlName="username"
+            placeholder="Enter your email"
+            [attr.data-invalid]="isUsernameEmailInvalid ? true : null"
+          />
+          <div *ngIf="isUsernameEmailInvalid" class="bx--form-requirement">
+            <span class="bx--text-input__invalid">
+              Username is invalid
+            </span>
+          </div>
+        </div>
+        <div class="bx--form-item">
+          <label for="password" class="bx--label">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="bx--text-input"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="bx--form-requirement">
+            <span class="bx--text-input__invalid">Password is required</span>
+          </div>
+        </div>
+        <button class="bx--btn bx--btn--primary" type="submit">Log in</button>
+      </form>
+    </div>
+    <div class="bx--col-lg-4 bx--col-md-3 bx--col-sm-2"></div>
+  </div>
+</div>
