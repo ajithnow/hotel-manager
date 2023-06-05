@@ -57,5 +57,5 @@ When writing commit messages, please follow these guidelines:
 
 Contributors who make significant contributions to the project will be recognized and acknowledged in the project's documentation.
 
-Thank you for your interest in contributing to the Hotelier App. We appreciate your support and look forward to your contributions!
+Thank you for your interest in contributing to the Hotel Manager App. We appreciate your support and look forward to your contributions!
 
